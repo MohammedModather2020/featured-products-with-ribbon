@@ -11,10 +11,10 @@
    1.0- Universal Element
    1.1- Body Style
 * 2- Section Style
-   2.0- 
+   2.0- Products
 * 3- Common Style 
    3.0- Container Section
-   3.1- 
+   3.1-  Font Family
 */
 /** 1- General Style */
 /**  1.0- Universal Element */
@@ -25,18 +25,126 @@
 }
 /** 1.1- Body Style */
 body{
+  font-family: 'DroidKufi-Regular', sans-serif;
   background-color: #F6F6F6;
 }
 /** 2- Section Style */
-/**  2.0-  */
-
-
-
-
+/**  2.0- Products */
+.products .container{
+  margin-top: 3rem;
+  border: 1px solid #DDDDDD;
+}
+.products .container .title{
+  color: #FFFF;
+  background-color: #326C7B;
+  width: fit-content;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  padding: .3rem 1rem;
+  padding-inline-start: 1.8rem;
+}
+.products .container .items{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  margin-top: 1rem;
+  margin-inline-start: 2rem;
+  gap: 1.5rem;
+}
+.products .container .items .item{
+  border: 5px solid #DDDDDD;
+  text-align: center;
+}
+.products .container .items .item.premium{
+  position: relative;
+}
+.products .container .items .item.premium::before{
+  position: absolute;
+  content: "Sale!";
+  width: 40px;
+  height: 40px;
+  font-size: .8rem;
+  line-height: 40px;
+  text-align: center;
+  display: inline-block;
+  top: -13px;
+  left: -18px;
+  color: #FFF;
+  background-color: #F94B02;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.products .container .items .item .image {
+  height: 230px;
+}
+.products .container .items .item .image img{
+  width: 100%;
+  height: 100%;
+  padding: 1.5px;
+}
+.products .container .items .item .info {
+  padding: .55rem;
+}
+.products .container .items .item .info .name{
+  font-size: .85rem;
+  color: #666;
+  margin-bottom: .4rem;
+  font-weight: normal;
+}
+.products .container .items .item .info .price{
+  font-size: .8rem;
+  color: #326C7B;
+  display: block;
+  position: relative;
+}
+.products .container .items .item.premium .info .price del{
+  color: #888;
+  font-size: .7rem;
+}
+.products .container .items .item.premium .info .price span{
+  color: #F94B02;
+}
+.products .container .items .item .info .price::before,
+.products .container .items .item .info .price::after{
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: 50%;
+  height: 2px;
+  width: calc(50% - 30px);
+  background-color: #DDDDDD;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.products .container .items .item .info .price::before{
+  right: 0;
+}
+.products .container .items .item .info .price::after{
+  left: 0;
+}
+.products .container .items .item.premium .info .price::after,
+.products .container .items .item.premium .info .price::before{
+  width: calc(50% - 50px);
+}
 /**3- Common Style  */
 /** 3.0- Container Section */
 .container{
   width: 80%;
   margin: auto;
-  padding: 1rem;
+  padding: .2rem;
+}
+/** 3.1- Font Family */
+@font-face {
+  font-family: 'DroidKufi-Bold';
+  src: url(../fonts/DroidKufi-Bold.ttf);
+}
+@font-face {
+  font-family: 'DroidKufi-Regular';
+  src: url(../fonts/DroidKufi-Regular.ttf);
 }
